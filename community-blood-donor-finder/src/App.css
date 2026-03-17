@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #1a0a0a, #2d0d0d);
+  border-bottom: 2px solid #c0392b;
+  padding: 20px 0;
+  margin-bottom: 28px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #ff6b6b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.donor-count-badge {
+  background: #c0392b;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  min-width: 110px;
+}
+
+.count-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.count-label {
+  font-size: 0.72rem;
+  color: #ffc0c0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 160px;
+}
+
+.filter-group label {
+  font-size: 0.78rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-select,
+.filter-input {
+  background: #0f0f1a;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+  border-color: #c0392b;
+}
+
+.checkbox-group {
+  justify-content: flex-end;
+}
+
+.checkbox-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem !important;
+  color: #ccc !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  padding-bottom: 4px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #c0392b;
+  cursor: pointer;
+}
+
+.filter-result-count {
+  font-size: 0.88rem;
+  color: #888;
+}
+
+.filter-result-count strong {
+  color: #ff6b6b;
+}
+
+/* DONOR GRID */
+.donor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* DONOR CARD */
+.donor-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.donor-card:hover {
+  transform: translateY(-3px);
+  border-color: #c0392b44;
+  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.15);
+}
+
+.donor-card.unavailable {
+  opacity: 0.65;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.donor-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.donor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.donor-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.donor-email {
+  font-size: 0.78rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blood-group-badge {
+  background: #c0392b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #bbb;
+}
+
+.detail-icon {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.availability-badge {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.availability-badge.available {
+  background: #0d2b1a;
+  color: #4caf50;
+  border: 1px solid #2e7d32;
+}
+
+.availability-badge.not-available {
+  background: #2b0d0d;
+  color: #ef5350;
+  border: 1px solid #c62828;
+}
+
+/* REQUEST BUTTON */
+.request-btn {
+  margin-top: auto;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #c0392b;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.request-btn:hover:not(:disabled) {
+  background: #e74c3c;
+}
+
+.request-btn.requested {
+  background: #1a3d1a;
+  color: #4caf50;
+  cursor: default;
+}
+
+.request-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* SPINNER */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 0;
+  color: #888;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #2a2a4a;
+  border-top-color: #c0392b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-sub {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #555;
+}
+
+/* ERROR */
+.error-message {
+  text-align: center;
+  padding: 40px;
+  color: #ef5350;
+  font-size: 1rem;
+  background: #2b0d0d;
+  border: 1px solid #c62828;
+  border-radius: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  h1 { font-size: 1.2rem; }
+  .donor-grid { grid-template-columns: 1fr; }
+  .filter-controls { flex-direction: column; }
+  .filter-group { min-width: 100%; }
+}
