@@ -1,8 +1,6 @@
-// src/context/CartContext.js
-import React, { createContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-
-export const CartContext = createContext();
+import { CartContext } from './CartContextFile';
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {

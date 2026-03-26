@@ -32,7 +32,7 @@ const Checkout = () => {
   const tax = subtotal * 0.1;
   const total = subtotal + tax;
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsProcessing(true);
     
     // Simulate payment processing

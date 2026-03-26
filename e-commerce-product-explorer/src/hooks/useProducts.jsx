@@ -25,7 +25,7 @@ export const useProducts = () => {
       setProducts(data);
       setFilteredProducts(data);
       setError(null);
-    } catch (err) {
+    } catch {
       setError('Failed to load products');
     } finally {
       setLoading(false);
@@ -36,7 +36,7 @@ export const useProducts = () => {
     try {
       const data = await fetchCategories();
       setCategories(data);
-    } catch (err) {
+    } catch {
       console.error('Failed to load categories');
     }
   };

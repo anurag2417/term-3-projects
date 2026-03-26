@@ -1,7 +1,7 @@
 // src/pages/Wishlist.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+//import { motion } from 'framer-motion';
 import { FiTrash2, FiShoppingCart } from 'react-icons/fi';
 import { CartContext } from '../context/CartContext';
 import './Wishlist.css';

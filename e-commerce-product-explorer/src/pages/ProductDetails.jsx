@@ -1,7 +1,7 @@
 // src/pages/ProductDetails.js
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+//import { motion } from 'framer-motion';
 import { FiShoppingCart, FiHeart, FiArrowLeft } from 'react-icons/fi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -24,21 +24,21 @@ const ProductDetails = () => {
   const isInWishlist = product && wishlistItems.some(item => item.productId === product.id);
 
   useEffect(() => {
+    const loadProduct = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchProductById(id);
+        setProduct(data);
+        setError(null);
+      } catch {
+        setError('Failed to load product details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     loadProduct();
   }, [id]);
-
-  const loadProduct = async () => {
-    try {
-      setLoading(true);
-      const data = await fetchProductById(id);
-      setProduct(data);
-      setError(null);
-    } catch (err) {
-      setError('Failed to load product details');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleAddToCart = () => {
     addToCart(product, quantity);

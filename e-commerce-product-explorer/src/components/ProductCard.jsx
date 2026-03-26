@@ -1,7 +1,7 @@
 // src/components/ProductCard.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+//import { motion } from 'framer-motion';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
 import { CartContext } from '../context/CartContext';
 import './ProductCard.css';
