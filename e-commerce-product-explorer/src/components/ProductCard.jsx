@@ -1,7 +1,7 @@
 // src/components/ProductCard.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-//import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
 import { CartContext } from '../context/CartContext';
 import './ProductCard.css';
@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   const isInWishlist = wishlistItems.some(item => item.productId === product.id);
 
   return (
-    <motion.div
+    <Motion.div
       className="product-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 
