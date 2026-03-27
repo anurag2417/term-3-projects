@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion as Motion} from 'framer-motion';
 import { useProducts } from '../hooks/useProducts';
 import ProductGrid from '../components/ProductGrid';
 import './Home.css';
@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <motion.div
+      <Motion.div
         className="hero-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -24,7 +24,7 @@ const Home = () => {
             Shop Now
           </Link>
         </div>
-      </motion.div>
+      </Motion.div>
 
       <div className="container">
         <section className="featured-section">
