@@ -1,7 +1,5 @@
-// src/pages/ProductDetails.js
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-//import { motion } from 'framer-motion';
 import { FiShoppingCart, FiHeart, FiArrowLeft } from 'react-icons/fi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';

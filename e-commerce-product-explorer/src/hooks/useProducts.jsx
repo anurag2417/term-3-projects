@@ -1,4 +1,3 @@
-// src/hooks/useProducts.js
 import { useState, useEffect } from 'react';
 import { fetchProducts, fetchCategories } from '../services/api';
 

@@ -1,7 +1,5 @@
-// src/pages/Cart.js
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-//import { motion } from 'framer-motion';
 import { FiShoppingBag } from 'react-icons/fi';
 import { CartContext } from '../context/CartContext';
 import CartItem from '../components/CartItem';

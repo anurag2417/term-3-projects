@@ -1,5 +1,3 @@
-// src/pages/Products.js
-import React from 'react';
 import { useProducts } from '../hooks/useProducts';
 import ProductGrid from '../components/ProductGrid';
 import Filters from '../components/Filters';

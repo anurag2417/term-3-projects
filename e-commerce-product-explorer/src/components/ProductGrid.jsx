@@ -1,5 +1,3 @@
-// src/components/ProductGrid.js
-import React from 'react';
 import ProductCard from './ProductCard';
 import './ProductGrid.css';
 

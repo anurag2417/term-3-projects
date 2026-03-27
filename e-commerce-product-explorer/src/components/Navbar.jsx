@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FiShoppingCart, FiHeart, FiHome, FiGrid, FiShoppingBag } from 'react-icons/fi';

@@ -1,4 +1,3 @@
-// src/components/CartItem.js
 import React from 'react';
 import { FiTrash2, FiPlus, FiMinus } from 'react-icons/fi';
 import './CartItem.css';

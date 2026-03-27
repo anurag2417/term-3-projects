@@ -1,5 +1,3 @@
-// src/components/Filters.js
-import React from 'react';
 import { FiSearch, FiFilter } from 'react-icons/fi';
 import './Filters.css';
 

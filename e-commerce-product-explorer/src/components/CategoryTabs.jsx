@@ -1,5 +1,3 @@
-// src/components/CategoryTabs.js
-import React from 'react';
 import './CategoryTabs.css';
 
 const CategoryTabs = ({ selectedCategory, setSelectedCategory, categories }) => {

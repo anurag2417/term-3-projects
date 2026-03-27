@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion as Motion} from 'framer-motion';
 import { useProducts } from '../hooks/useProducts';
