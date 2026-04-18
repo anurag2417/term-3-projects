@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuestions } from '../context/QuestionContext';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import PracticeTimer from '../components/timer/PracticeTimer';
 import StatusBadge from '../components/questions/StatusBadge';
 import Button from '../components/ui/Button';
@@ -13,11 +13,15 @@ export const QuestionDetailPage = () => {
   const question = questions.find(q => q.id === id);
 
   const [notes, setNotes] = useState(question?.notes || '');
-  const textareaRef = useRef(null);
 
-  useEffect(() => {
-    if (question) setNotes(question.notes || '');
-  }, [question]);
+  // 1. Add this new state variable to track the currently loaded question
+  const [syncedId, setSyncedId] = useState(null);
+
+  // 2. Replace the useEffect with this render-phase state update
+  if (question && syncedId !== question.id) {
+    setNotes(question.notes || '');
+    setSyncedId(question.id);
+  }
 
   if (!question) return <div className="p-6 text-gray-500">Question not found.</div>;
 
@@ -74,7 +78,6 @@ export const QuestionDetailPage = () => {
       <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col">
          <h3 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Solution Notes</h3>
          <textarea
-           ref={textareaRef}
            value={notes}
            onChange={(e) => setNotes(e.target.value)}
            onBlur={handleNotesBlur}
